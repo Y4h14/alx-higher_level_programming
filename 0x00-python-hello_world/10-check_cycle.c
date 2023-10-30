@@ -1,15 +1,15 @@
 #include "lists.h"
 /**
- * find_listint_loop - finds a loop in alinked list
- * @head: the first node in a list
- * Return: the adress of the node where the loop start or NULL
+ * check_cycle - finds a loop in alinked list
+ * @list: the first node in a list
+ * Return: 1 if a cycle found
  */
 int check_cycle(listint_t *list)
 {
 	listint_t *p1, *p2;
 
 	if (list == NULL)
-		return (NULL);
+		return (0);
 	p1 = list;
 	p2 = list;
 	while (p1 && p2 && p1->next && p2->next)
