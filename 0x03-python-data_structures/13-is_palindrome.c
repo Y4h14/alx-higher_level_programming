@@ -1,4 +1,30 @@
 #include "lists.h"
+#include <stdlib.h>
+/**
+ * reverse_listint - reverses a listint_t
+ * @head: pointer the the header node
+ * Return: pointer to the first node of the reversed list
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+
+	listint_t *next, *prev = NULL;
+
+	if (head == NULL || *head == NULL)
+		return (NULL);
+
+
+	while (*head)
+	{
+		next = (*head)->next;
+		(*head)->next = prev;
+		prev = (*head);
+		(*head) = next;
+	}
+	*head = prev;
+
+	return (*head);
+}
 /**
  * is_palindrome - check is a singly linked list is a palindrome
  * @head: pointer to the head of the list
@@ -6,13 +32,13 @@
  */
 int is_palindrome(listint_t **head)
 {
-	linstint_t *temp = *head, *next = *head, tail = *head;
-	lisintint_t *alt = NULL;
+	listint_t *temp = *head, *next = *head, *tail = *head;
+	listint_t *alt = NULL;
 
-	if(*head == NULL || (*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	/* making an alternative list */
-	while(1)
+	while (1)
 	{
 		next = next->next->next;
 		if (!next)
@@ -28,17 +54,17 @@ int is_palindrome(listint_t **head)
 		tail = tail->next;
 	}
 	reverse_listint(&alt);
-	while(alt && temp)
+	while (alt && temp)
 	{
 		if (temp->n == alt->n)
 		{
-			temp = tem->next;
+			temp = temp->next;
 			alt = alt->next;
 		}
 		else
 			return (0);
 	}
-	if (!dup)
+	if (!alt)
 		return (1);
 
 	return (0);
