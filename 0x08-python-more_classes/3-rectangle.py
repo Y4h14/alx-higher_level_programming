@@ -55,7 +55,9 @@ class Rectangle:
     def __str__(self):
         result = ""
         for i in range(self.__height):
-            result += "#" * self.__width + '\n'
+            result += "#" * self.__width
+            if i != self.height - 1:
+                result += '\n'
         return (result)
 
     def area(self):
