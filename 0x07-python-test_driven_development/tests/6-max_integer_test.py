@@ -1,17 +1,28 @@
 #!/usr/bin/python3
-"""Test the max ingter function"""
+"""unit testing module for 6-max_integer_test.py
+"""
 import unittest
-max_integer = __import__('6-max_integer').max_integer
+max_int = __import__('6-max_integer').max_integer
 
-class TestMaxInt(unittest.TestCase):
-    def test_positvie_int(self):
-        #test max with positive integers
-        self.assertAlmostEqual(max_integer([1, 2, 3, 4]), 4)
 
-    def test_Negative_int(self):
-        #testing max with negative int
-        self.assertAlmostEqual(max_integer([10, 2, -12, 12, 1]), 12)
+class TestMaxInteger(unittest.TestCase):
+    """
+    class for testing 6-max_integer_test.py
+    """
 
-    def test_empty_list(self):
-        #testing for worng values
-        self.assertAlmostEqual(max_integer([]), None)
+    def test_max_integer(self):
+        """ test case for normal list of integers w/o negatives
+        """
+        test_list = [1, 2, 3, 8, 4]
+        self.assertEqual(max_int(test_list), 8)
+
+    def test_max_integer_neg(self):
+        """ test case for normal list of integers w/ negatives
+        """
+        test_list = [1, 2, 3, 8, 4, -40, -400, -12, 0]
+        self.assertEqual(max_int(test_list), 8)
+
+    def test_max_integer_(self):
+        """ test case for empty list
+        """
+        self.assertEqual(max_int([]), None)
