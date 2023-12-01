@@ -7,11 +7,12 @@ def text_indentation(text):
     Args:
         -text (str): a string
     """
-
+    string = ""
     if not isinstance(text, str):
         raise TypeError('text must be a string')
-    for i in text:
-        if i in ['?', ':', '.']:
-            print("{}\n".format(i))
+    for ch in text:
+        string += ch
+        if ch in ['?', ':', '.']:
+            string += "\n\n"
         else:
-            print(i, end='')
+            print(string, end='')

@@ -7,24 +7,28 @@ def matrix_divided(matrix, div):
     divide a matrix to an int
     Args:
         -matix: a 2d matrix
-        -div: a number to divide by 
-
+        -div: a number to divide by
     """
-    result = []
-    row_lenth = len(matrix[0])
-    for i in matrix:
-        for e in i:
-            if type(e) is not int:
-                if type(e) is not float:
-                    raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
-        if len(i) != row_lenth:
-            raise TypeError('Each row of the matrix must have the same size')
-    if type(div) is not int:
-        if type(div) is not float:
-            raise TypeError('div must be a number')
-    if div == 0:
-        raise ZeroDivisionError('division by zero')
-    result = [[round(element / div, 2)for element in row]for row in matrix]
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+        return matrix
+    elif div == 0:
+        raise ZeroDivisionError("division by zero")
+        return matrix
 
-    return result
+    prevRowLen = -1
+    new_list = []
+    for row in matrix:
+        if (prevRowLen != len(row) and prevRowLen != -1):
+            raise TypeError("Each row of the matrix must have the same size")
+            return matrix
+        for ele in row:
+            if not isinstance(ele, (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists) of" +
+                                " integers/floats")
+                return matrix
+            else:
+                new_list.append(round(ele / div, 2))
+        prevRowLen = len(row)
 
+    return new_list
