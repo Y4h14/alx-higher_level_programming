@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """define an extended verison of list"""
 
 
