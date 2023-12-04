@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-"""
-    define a function that check f the object is an instance of,
-    or if the object is an instance of a class that inherited from,
-    the specified class
-"""
+"""define a fucntion that check class instances"""
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """
-    Args:
-        -obj : the object to check
-        -a_class: the class to check
+        check if an object is an instance of the class or a
+        subclass of it
+        Args:
+            -obj: the object
+            -a_class: the class
+        Return:
+            True if the object is an instance of or if the
+            object is an instance of a class that inherited
+            from the spesified class, otherwise false.
     """
-    return isinstance(obj, a_class) or is subclass(type(obj), a_class)
+    return (isinstance(obj, a_class) or issubclass(type(obj), a_class))
