@@ -2,7 +2,7 @@
 """define an extended verison of list"""
 
 
-class MYList(list):
+class MyList(list):
     """an extention to list type"""
     def print_sorted(self):
         """print a sorted object"""
