@@ -26,7 +26,6 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """an init fucntion"""
-        self.__shape = "Rectangle"
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
@@ -37,5 +36,5 @@ class Rectangle(BaseGeometry):
         return (self.__width * self.__height)
 
     def __str__(self):
-        result = f"[{self.__shape}] {self.__width}/{self.__height}"
+        result = f"[Rectangle] {self.__width}/{self.__height}"
         return result

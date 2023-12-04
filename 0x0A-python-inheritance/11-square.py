@@ -8,10 +8,9 @@ class Square(Rectangle):
     def __init__(self, size):
         """the init function"""
         super().__init__(size, size)
-        self.__shape = "Square"
         self.integer_validator("square size", size)
         self.__size = size
 
     def __str__(self):
-        result = f"[{self.__shape}] {self.__size}/{self.__size}"
+        result = f"[Square] {self.__size}/{self.__size}"
         return result
