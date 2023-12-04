@@ -1,9 +1,11 @@
-#!/usr/bin/pyhton3
-"""defines a child class for class list"""
+#!/usr/bin/python
+"""define an extended verison of list"""
 
 
-class MyList(list):
-    """child class of the list class"""
+class MYList(list):
+    """an extention to list type"""
     def print_sorted(self):
-        """print list but sorted"""
-        print(sorted(self))
+        """print a sorted object"""
+        copy = self[:]
+        copy.sort()
+        print(copy)
