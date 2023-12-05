@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""define a function to get the dictionary discription"""
 
 
 def class_to_json(obj):

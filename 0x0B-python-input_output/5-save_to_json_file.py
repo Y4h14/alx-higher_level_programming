@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""define a funciton that write serialized json to a file"""
 import json
 
 

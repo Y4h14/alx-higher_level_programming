@@ -16,3 +16,11 @@ class Student:
             return ({k: getattr(self, k) for k in attrs if hasattr(self, k)})
         else:
             return self.__dict__
+
+    def reload_from_json(self, json):
+        """replaces all attrivutes of the stuedent instance"""
+        for key in json:
+            try:
+                setattr(self, key, json[key])
+            except FileNotFoundError:
+                pass
