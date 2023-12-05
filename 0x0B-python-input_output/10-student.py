@@ -13,6 +13,12 @@ class Student:
     def to_json(self, attrs=None):
         """retrives a dictionary representation of an instance"""
         if attrs:
-            return ({k: getattr(self, k) for k in attrs if hasattr(self, k)})
+            new = {}
+            for a in attrs:
+                try:
+                    new[a] = self.__dict__[a]
+                except FileNotFoundError:
+                    pass
+            return new
         else:
             return self.__dict__
