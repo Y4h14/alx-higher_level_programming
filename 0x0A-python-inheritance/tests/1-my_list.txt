@@ -20,3 +20,7 @@ TESTS FOR 1-my_list.py
 
 >>> print(my_list)
 [4000000000000000, 0]
+
+>>> my_list2 = MyList()
+>>> my_list2.print_sorted()
+[]
