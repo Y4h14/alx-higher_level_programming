@@ -107,7 +107,7 @@ class Base:
                     fields = ["id", "size", "x", "y"]
                 dic_list = csv.DictReader(f, fieldnames=fields)
                 dic_list = [dict([k, int(v)] for k, v in d.items())
-                    for d in dic_list]
+                            for d in dic_list]
                 return [cls.create(**d) for d in dic_list]
         except IOError:
-            return []                    
+            return []
