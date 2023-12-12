@@ -119,6 +119,7 @@ class Rectangle(Base):
         return (self.__width * self.__height)
 
     def display(self):
+        """Displays the shape of the object"""
         for i in range(self.__y):
             print()
         for i in range(self.__height):

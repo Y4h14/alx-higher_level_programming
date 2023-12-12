@@ -82,6 +82,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """saves data to an csv file"""
         filename = cls.__name__ + ".csv"
         dic_list = []
         with open(filename, 'w', encoding="utf-8") as f:
@@ -98,6 +99,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """loads data from a csv file"""
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, 'r', encoding='utf-8') as f:
