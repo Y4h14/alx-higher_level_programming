@@ -9,6 +9,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """return the string representation of the object"""
         result = f"[Square] ({self.id}) {self.x}/{self.y}"
         result += f" - {self.width}"
         return result
@@ -19,6 +20,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """sets the value of size"""
         if not isinstance(value, (int, float)):
             raise TypeError('width must be an integer')
         else:
@@ -45,6 +47,7 @@ class Square(Rectangle):
                 return
 
     def to_dictionary(self):
+        """return the dictionary representaion of an object """
         return {'id': self.id,
                 'size': self.size,
                 'x': self.x,
