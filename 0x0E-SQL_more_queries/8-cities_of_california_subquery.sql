@@ -1,6 +1,6 @@
 -- lists all cities of california
 SELECT id, name 
-FROM states, cities
+FROM cities
 WHERE states.id IN
 	(SELECT id 
 		FROM states
