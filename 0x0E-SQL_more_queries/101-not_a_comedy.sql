@@ -9,7 +9,7 @@ FROM t_show AS t
 	WHERE t.title NOT IN(
 		SELECT title
 		FROM tv_shows AS t
-		INNER JOIN tv_show_genres AS s
+		INNER JOIN tv_show_genres AS t
 		ON s.show_id = t.id
 
 		INNER JOIN tv_genres AS g
