@@ -1,6 +1,6 @@
 -- lists all shows without the genre comedy
 SELECT DISTINCT title
-FROM t_show AS t
+FROM tv_shows AS t
 	LEFT JOIN tv_shows_genres AS s
 	ON s.show_id = t.id
 
