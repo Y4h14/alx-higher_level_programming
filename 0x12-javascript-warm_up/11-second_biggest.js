@@ -1,13 +1,9 @@
 #!/usr/bin/node
-const args = process.argv;
-let i = 2;
-let max = parseInt(args[2]);
-let semiMax = 0;
-while (args[i] !== undefined) {
-  if (args[i] > max) {
-    semiMax = max;
-    max = parseInt(args[i]);
-  }
-  i++;
+const args = process.argv.slice(2);
+if (args.length === 0 || args.length === 1) {
+  console.log(0);
+} else {
+  const nums = args.map(Number);
+  const sortedNums = nums.sort((a, b) => b - a);
+  console.log(parseInt(sortedNums[1]));
 }
-console.log(semiMax);
