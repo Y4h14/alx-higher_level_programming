@@ -30,11 +30,9 @@ fs.readFile(fileB, 'utf8', function (err, data) {
   }
 });
 function processFiles () {
-  if (textA && textB) {
-    fs.writeFile(fileC, textA + textB, 'utf8', function (err) {
-      if (err) {
-        console.error(err);
-      }
-    });
-  }
+  fs.writeFile(fileC, textA + textB, 'utf8', function (err) {
+    if (err) {
+      console.error(err);
+    }
+  });
 }
