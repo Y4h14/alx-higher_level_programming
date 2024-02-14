@@ -9,16 +9,24 @@ fs.readFile(fileA, 'utf8', function (err, data) {
   if (err) {
     console.error(err);
   } else {
-    textA = data;
-    processFiles();
+    if (data.length !== 0) {
+      textA = data;
+      processFiles();
+    } else {
+      textA = '';
+    }
   }
 });
 fs.readFile(fileB, 'utf8', function (err, data) {
   if (err) {
     console.error(err);
   } else {
-    textB = data;
-    processFiles();
+    if (data.length !== 0) {
+      textB = data;
+      processFiles();
+    } else {
+      textB = '';
+    }
   }
 });
 function processFiles () {
