@@ -19,8 +19,8 @@ def states_list(username, passwrod, database, name):
         db=database)
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE  name=%s ORDER BY id ASC"
-    cur.execute(query, (name, ))
+    query = f"SELECT * FROM states WHERE  name={name} ORDER BY id ASC"
+    cur.execute(query)
 
     rows = cur.fetchall()
 
