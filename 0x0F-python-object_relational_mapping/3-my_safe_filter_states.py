@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""list all rows form the states table"""
+"""connect with a mysql database"""
 import MySQLdb
 import sys
 
 
-def states_list(username, passwrod, database, name):
-    """list all rows from the states table
+def run_sql(username, passwrod, database, name):
+    """runs some sql
         Args:
         username: the username for the database
         passwrod: the password for the database
@@ -34,4 +34,4 @@ def states_list(username, passwrod, database, name):
 if __name__ == "__main__":
     if len(sys.argv) == 5:
         username, password, database, name = sys.argv[1:]
-        states_list(username, password, database, name)
+        run_sql(username, password, database, name)

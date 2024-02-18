@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""list all rows form the cities table"""
+"""connect with a mysql database"""
 import MySQLdb
 import sys
 
 
-def states_list(username, passwrod, database):
-    """list all rows from the cities table
+def run_sql(username, passwrod, database):
+    """runs some sql
         Args:
         username: the username for the database
         passwrod: the password for the database
@@ -19,7 +19,11 @@ def states_list(username, passwrod, database):
         db=database)
     cur = db.cursor()
 
-    query = "SELECT * FROM cities ORDER BY id ASC"
+    query = """
+    SELECT cities.id, cities.name, states.name
+    FROM cities INNER JOIN states ON states.id=cities.state_id
+    ORDER BY id ASC
+    """
     cur.execute(query)
 
     rows = cur.fetchall()
@@ -34,4 +38,4 @@ def states_list(username, passwrod, database):
 if __name__ == "__main__":
     if len(sys.argv) == 4:
         username, password, database = sys.argv[1:]
-        states_list(username, password, database)
+        run_sql(username, password, database)

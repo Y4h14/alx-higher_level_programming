@@ -19,10 +19,10 @@ if __name__ == "__main__":
     session = Session()
 
     result = session.query(State.name,
-                            City.id,
-                            City.name).join(
-                                State,
-                                State.id == City.id
-                                )
+                           City.id,
+                           City.name).join(
+                               State,
+                               State.id == City.id
+                               ).orderby(City.id)
     for item in result:
         print(f"{item[0]}: ({item[1]}) {item[2]}")

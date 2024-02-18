@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""list all rows form the cities table"""
+"""connect with a mysql database"""
 import MySQLdb
 import sys
 
 
 def states_list(username, passwrod, database, name):
-    """list all rows from the cities table
+    """runs some sql
         Args:
         username: the username for the database
         passwrod: the password for the database
