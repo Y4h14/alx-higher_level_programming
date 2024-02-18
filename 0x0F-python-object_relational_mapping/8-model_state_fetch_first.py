@@ -13,10 +13,9 @@ if __name__ == "__main__":
         "mysql+mysqldb://{}:{}@localhost:3306/{}"
         .format(sys.argv[1], sys.argv[2], sys.argv[3]))
 
-    Base.metadata.createall(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     result = session.query(State).all()
-    for item in result:
-        print(f'{item.id}: {item.name}')
+    print(f'{result[0].id}: {result[0].name}')
