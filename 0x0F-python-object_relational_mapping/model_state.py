@@ -4,6 +4,9 @@ from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+engine = create_engine('mysql://\'user1\':\'Pass123\'}@localhost:3306/hbtn_0d_usa', echo=True)
+
+
 Base = declarative_base()
 
 
@@ -13,11 +16,5 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-user = 'user1'
-passwd = 'Pass@123'
-engine = create_engine(f'mysql+mysqlconnector://\
-            {user}:{passwd}@localhost:3306/hbtn_0e_usa')
-Base.metadata.create_all(bind=engine)
 
-Session = sessionmaker(bind=engine)
-session = Session()
+Base.metadata.create_all(bind=engine)
