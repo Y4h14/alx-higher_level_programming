@@ -26,9 +26,8 @@ def states_list(username, passwrod, database, name):
 
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row[0] + ', ', end='')
-    print()
+    result = ", ".join(row[0] for row in rows)
+    print(result)
 
     cur.close()
     db.close()
