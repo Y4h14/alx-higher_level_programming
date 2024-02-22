@@ -19,4 +19,4 @@ if __name__ == "__main__":
 
     result = session.query(State).order_by(State.id)
     for item in result:
-        print(item.id, item.name, sep=':')
+        print(item.id, item.name, sep=': ')

@@ -22,7 +22,7 @@ if __name__ == "__main__":
                            City.id,
                            City.name).join(
                                State,
-                               State.id == City.id
-                               ).orderby(City.id)
+                               State.id == City.state_id
+                               ).order_by(City.id)
     for item in result:
         print(f"{item[0]}: ({item[1]}) {item[2]}")
