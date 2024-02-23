@@ -22,5 +22,5 @@ if __name__ == "__main__":
     for result in results:
         print(result.id, result.name, sep=': ')
         for city in result.cities:
-            print("   ", end="")
+            print("    ", end="")
             print(city.id, city.name, sep=": ")
