@@ -10,4 +10,8 @@ if __name__ == "__main__":
     token = argv[2]
     url = "https://api.github.com/user"
     res = requests.get(url, auth=HTTPBasicAuth(user, token))
-    print(res.json()['id'])
+    try:
+        user_id = res.json()['id']
+    except KeyError:
+        user_id = None
+    print(user_id)
