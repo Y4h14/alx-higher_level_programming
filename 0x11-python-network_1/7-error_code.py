@@ -4,11 +4,10 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    try:
-        res = requests.get(sys.argv[1])
+    res = requests.get(sys.argv[1])
+    status = res.status_code
+    if status < 400:
         print(res.text)
-        res.raise_for_status()
-    except requests.exceptions.HTTPError as e:
-        print(f"Error code: {e.response.status_code}")
-    except requests.exceptions.RequestException as err:
-        print(f"Request error: {err}")
+    else:
+        print(f"Error code: {status}")
+        

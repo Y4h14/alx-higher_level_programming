@@ -19,7 +19,7 @@ if __name__ == "__main__":
     try:
         json_data = res.json()
 
-        if isinstance(json_data, dict) and not json_data:
+        if len(json_data) == 0 or not json_data.get('name'):
             print("No result")
         else:
             print(f"[{json_data.get('id')}] {json_data.get('name')}")

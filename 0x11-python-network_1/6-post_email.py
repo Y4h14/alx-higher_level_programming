@@ -9,5 +9,5 @@ if __name__ == "__main__":
     url = sys.argv[1]
     headers = {"email": sys.argv[2]}
 
-    res = requests.get(url, headers=headers)
+    res = requests.post(url, data=headers)
     print(res.text)

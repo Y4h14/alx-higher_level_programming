@@ -10,6 +10,8 @@ if __name__ == "__main__":
     url = "https://api.github.com/user"
     headers = {"Authorization": f"Bearer {token}",
                "X-GitHub-Api-Version": "2022-11-28"}
-
     res = requests.get(url, headers=headers)
-    print(res.json()['id'])
+    if len(res.json()) != 0:
+        print(res.json()['id'])
+    else:
+        print(None)
